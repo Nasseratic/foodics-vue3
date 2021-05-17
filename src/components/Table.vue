@@ -1,5 +1,5 @@
 <template>
-    <div class="min-h-screen flex items-center px-4">
+    <div class="min-h-screen flex px-2">
         <div class="overflow-x-auto w-full">
             <!-- Table -->
             <table

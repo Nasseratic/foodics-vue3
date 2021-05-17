@@ -8,7 +8,6 @@
           <div
             class="bg-white rounded shadow p-8 m-4 max-w-xs max-h-full text-center overflow-y-scroll"
           >
-            ID :{{ id }}
             <dynamic-form :form="form" @submitted="formSubmitted" />
             <button
               :disabled="isLoading"

@@ -6,3 +6,4 @@
 4. Form validation ( maybe use better forms lib )
 5. Better axios interceptors
 6. Add more typing for better usage of TypeScript
+7. Use better formatter
