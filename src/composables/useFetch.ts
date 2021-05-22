@@ -2,7 +2,7 @@ import { ComputedRef, Ref, ref, toRef } from "@vue/reactivity";
 import { onMounted, watch, watchEffect } from "@vue/runtime-core";
 import { HttpClient } from "../utils/http";
 
-export function useFetch<T>(url: string | Ref<string>) {
+export function useFetch<T>(url: Ref<string>) {
   const isLoading = ref(false);
   const loadedData = ref<T | null>(null);
 
@@ -10,7 +10,7 @@ export function useFetch<T>(url: string | Ref<string>) {
     loadedData.value = null;
     isLoading.value = true;
 
-    const { data } = await HttpClient.get(url.value ?? url);
+    const { data } = await HttpClient.get(url.value);
 
     loadedData.value = data;
     isLoading.value = false;

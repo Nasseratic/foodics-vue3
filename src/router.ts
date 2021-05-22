@@ -1,5 +1,6 @@
 import { RouteRecordRaw, createRouter, createWebHashHistory } from "vue-router";
 import { Home } from "./components";
+import { Categories, Category, CategoriesSort } from "./pages/categories";
 import { Customers, CustomerView } from "./pages/customers";
 
 const routes: RouteRecordRaw[] = [
@@ -14,6 +15,18 @@ const routes: RouteRecordRaw[] = [
   {
     path: "/customers/:id",
     component: CustomerView,
+  },
+  {
+    path: "/categories",
+    component: Categories,
+  },
+  {
+    path: "/categories-sort",
+    component: CategoriesSort,
+  },
+  {
+    path: "/categories/:id",
+    component: Category,
   },
 ];
 
