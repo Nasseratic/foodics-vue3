@@ -27,23 +27,23 @@ export function createCrudComposables<T>(pathPrefix: string) {
     return useFetch<{ data: T[]; meta: any }>(url);
   };
 
-  const useGet = (id: ComputedRef<string | string[]>) => {
-    const url = computed(() => `${pathPrefix}/${id.value}`);
+  const useGet = (id: Ref<string | string[]>) => {
+    const url = computed(() => (id.value ? `${pathPrefix}/${id.value}` : null));
     return useFetch<{ data: T; meta: any }>(url);
   };
 
   const useCreate = () => useMutation<T>({ method: "post", url: pathPrefix });
 
-  const useUpdate = (id: string) =>
-    useMutation<T>({ method: "put", url: `${pathPrefix}/${id}` });
+  const useUpdate = (id: Ref<string | string[]>) =>
+    useMutation<T>({ method: "put", url: `${pathPrefix}/${id.value}` });
 
-  const useDelete = (id: string) =>
-    useMutation({ method: "delete", url: `${pathPrefix}/${id}` });
+  const useDelete = (id: Ref<string | string[]>) =>
+    useMutation({ method: "delete", url: `${pathPrefix}/${id.value}` });
 
-  const useRestore = (id: string) =>
+  const useRestore = (id: Ref<string | string[]>) =>
     useMutation<T>({
       method: "put",
-      url: `${pathPrefix}/${id}/restore`,
+      url: `${pathPrefix}/${id.value}/restore`,
     });
 
   return {

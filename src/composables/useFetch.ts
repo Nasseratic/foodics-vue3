@@ -2,11 +2,12 @@ import { ComputedRef, Ref, ref, toRef } from "@vue/reactivity";
 import { onMounted, watch, watchEffect } from "@vue/runtime-core";
 import { HttpClient } from "../utils/http";
 
-export function useFetch<T>(url: Ref<string>) {
+export function useFetch<T>(url: Ref<string | null>) {
   const isLoading = ref(false);
   const loadedData = ref<T | null>(null);
 
   const fetch = async () => {
+    if (!url.value) return;
     loadedData.value = null;
     isLoading.value = true;
 

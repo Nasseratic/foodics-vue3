@@ -1,7 +1,7 @@
 <template>
   <div class="m-4">
     <router-link
-      class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+      class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4"
       to="/categories"
     >
       Back to Table View
@@ -18,7 +18,7 @@
         >
           <template #item="{ element }">
             <div
-              class="list-group-item border w-full app border-gray-300 p-2 my-2 rounded-md focus:outline-none ring-blue-200"
+              class="list-group-item border w-full app border-gray-300 p-2 my-2 focus:outline-none ring-blue-200"
             >
               {{ element.name }}
             </div>

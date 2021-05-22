@@ -6,7 +6,7 @@ import { Customers, CustomerView } from "./pages/customers";
 const routes: RouteRecordRaw[] = [
   {
     path: "",
-    component: Home,
+    redirect: "/categories",
   },
   {
     path: "/customers",

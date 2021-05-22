@@ -18,7 +18,7 @@
         </button>
       </nav>
     </div>
-    <div class="overflow-x-auto w-full">
+    <div class="overflow-y-visible w-full">
       <!-- Table -->
       <table
         class="mx-auto max-w-4xl w-full whitespace-nowrap rounded-lg bg-white divide-y divide-gray-300 overflow-hidden"
@@ -38,7 +38,7 @@
         <tbody class="divide-y divide-gray-200">
           <tr v-for="row of loadedData" :key="row">
             <td class="px-6 py-4" v-for="key of tableHead" :key="key">
-              <router-link :to="'/categories/' + row.id">
+              <router-link :to="viewUrlPrefix + '/' + row.id">
                 <p class>{{ row[key] }}</p>
               </router-link>
             </td>
@@ -59,6 +59,7 @@ export default defineComponent({
   },
   props: {
     loadedData: Object,
+    viewUrlPrefix: String,
     tableHead: {
       type: Array as PropType<string[]>,
       required: true,

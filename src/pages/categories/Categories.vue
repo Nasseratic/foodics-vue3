@@ -1,12 +1,12 @@
 <template>
   <button
-    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-4 rounded"
+    class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-4"
     @click="openModal"
   >
     Add
   </button>
   <router-link
-    class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 m-4 rounded"
+    class="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 m-4"
     to="/categories-sort"
   >
     Sort
@@ -17,7 +17,7 @@
   <div class="container mx-auto flex flex-col space-y-8 items-center">
     <dynamic-form :form="filtersForm" @submitted="updateFilters" />
     <button
-      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-4 rounded"
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 m-4"
       :form="filtersForm.id"
     >
       Filter
@@ -33,6 +33,7 @@
       :isLoading="isLoading"
       :cuurentPage="page"
       :onPageChange="changePage"
+      viewUrlPrefix="/categories"
     />
   </div>
 </template>
